@@ -1,4 +1,11 @@
 <h2>Editing "<%= @post.title %>"</h2>
+
+<ul>
+<% @post.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+
 <%= form_tag post_path(@post), method: "patch" do %>
   <div class="field">
     <%= label_tag "title", "Title" %>
